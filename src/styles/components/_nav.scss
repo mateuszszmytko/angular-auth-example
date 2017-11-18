@@ -1,0 +1,35 @@
+@import "../variables";
+
+nav {
+	height: 45px;
+	background: $main_clr;
+}
+
+.nav__links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.links__section {
+	margin: 0;
+	margin-left: auto;
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: inline-block;
+		line-height: 45px;
+		padding: 0 20px;
+		font-size: 14px;
+		color: white;
+		font-weight: 300;
+		&:hover, &:active, &:focus, &.active {
+			color: white;
+			text-decoration: none;
+			background: $dark_clr;
+		}
+	}
+}

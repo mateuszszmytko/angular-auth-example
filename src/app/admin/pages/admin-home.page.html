@@ -1,0 +1,26 @@
+<section id="admin-home">
+	<div class="container">
+			<table style="width:100%">
+				<tr >
+					<th>Username</th>
+					<th>Email</th> 
+					<th>Email confirmed</th> 
+					<th>Roles</th>
+					<th>Register Date</th>
+					
+					<th></th>
+				</tr>
+				<tr *ngFor="let user of users">
+					<td>{{user.userName}}</td>
+					<td>{{user.email}}</td>
+					
+					<td *ngIf="user.emailConfirmed">yes</td>
+					<td *ngIf="!user.emailConfirmed">no (<button class="link" (click)="confirmEmail(user.id)">confirm</button>)</td>
+					<td>{{user.roles}}</td>
+					<td>{{user.registerDate | date}}</td>
+					
+					<td><button class="btn btn--small" (click)="removeUser(user.id.str)">Remove</button></td>
+				</tr>
+			</table>
+	</div>
+</section>

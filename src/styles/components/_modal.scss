@@ -1,0 +1,30 @@
+@import "../variables";
+
+.modal__head {
+	position: relative;
+	background: $main_clr;
+	color: white;
+	padding: 0 25px;
+	&:after {
+		content: ' ';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 5px;
+		background: $dark_clr;
+	}
+}
+
+.modal__header {
+	color: white;
+	margin: 0;
+	line-height: 80px;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.modal__body {
+	padding: 35px 25px;
+
+}
