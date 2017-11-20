@@ -26,13 +26,13 @@ export class RegisterFormComponent implements OnInit {
 
 			this.router.navigateByUrl('/');
 		} catch(e) {
-			console.log(e);
-			this.errors = [];
 
-			for(let error of e.error) {
-				this.errors.push(error.description);
-			}
-			console.log(this.errors);
+			this.errors = [];
+			if(e.error)
+				for(let error of e.error) {
+					this.errors.push(error.description);
+				}
+
 		}
 
 		this.processing = false;

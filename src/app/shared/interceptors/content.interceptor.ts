@@ -9,7 +9,6 @@ export class ContentInterceptor implements HttpInterceptor {
   constructor() {}
  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('content interceptor');
     if(req.headers.has('Content-type')) {
       return next.handle(req);
     }

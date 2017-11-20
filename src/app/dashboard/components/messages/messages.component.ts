@@ -15,7 +15,6 @@ export class MessagesComponent implements OnInit {
   async ngOnInit() {
     let messagesFromService = await this._messagesService.getMessagesAsync();
     this.messages = messagesFromService.reverse();
-    console.log(this.messages);
   }
 
   updateMessages(message: IMessage) {

@@ -39,14 +39,13 @@ export class CurrentUserService {
 			this.decodeUser();
 			this._userEmmiter.next(this._userData);
 		}
-		console.log(status);
 		return status;		
 	}
 
 	public async registerAsync(model: RegisterData): Promise<boolean> {
 		//await this._auth.createAndAuthorize(model);
 		const tokenResult: any = await this._http.post
-			(this._apiUrl+'/api/auth/register', JSON.stringify(model))
+			(this._apiUrl+'/auth/register', JSON.stringify(model))
 			.toPromise(); 
 
 		this._tokenStorageService.token = tokenResult.token;

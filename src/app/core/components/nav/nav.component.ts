@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
         this.isAdmin = this._currentUser.isAdmin;
         this._currentUser.userObserver.subscribe(user => {
             this.isLogged = user != null; 
-            this.isLogged = user != null && this._currentUser.isAdmin; 
+            this.isAdmin = user != null && this._currentUser.isAdmin; 
         });
     }
 }

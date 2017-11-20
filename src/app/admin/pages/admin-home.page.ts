@@ -17,7 +17,6 @@ export class AdminHomePage {
 
     async ngOnInit(): Promise<void> {
         await this.refreshUsers();
-        console.log(this.users);
     }
 
     async removeUser(id: string): Promise<void> {

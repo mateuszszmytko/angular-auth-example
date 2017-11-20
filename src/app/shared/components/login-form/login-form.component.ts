@@ -22,7 +22,6 @@ export class LoginFormComponent implements OnInit {
         private _currentUser: CurrentUserService) { }
 
     ngOnInit() {
-        console.log(this.model.password);
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
 
