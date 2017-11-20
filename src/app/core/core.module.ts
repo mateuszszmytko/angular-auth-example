@@ -12,7 +12,7 @@ import { AccountPage } from './pages/account.page';
 import { DashboardPage } from './pages/dashboard.page';
 import { AuthService } from './services/auth.service';
 import { CurrentUserService } from './services/current-user.service';
-
+import { AdminGuard } from './guards/admin.guard';
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { CurrentUserService } from './services/current-user.service';
 	declarations: [NavComponent, AccountPage, DashboardPage],
 	exports: [NavComponent],
 	providers: [
-		{ provide: 'API_URL', useValue: 'http://localhost:52217/api'},
+		AdminGuard,
+		{ provide: 'API_URL', useValue: 'http://raa-restful.azurewebsites.net/api'},
 		CurrentUserService
 	]
 })

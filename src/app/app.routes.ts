@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { AuthGuard } from '@raa/angular-auth';
-
-
+import { AdminGuard } from 'app/core/guards/admin.guard';
 import { AccountPage } from './core/pages/account.page';
 import { DashboardPage } from './core/pages/dashboard.page';
-
-
 
 const appRoutes: Routes = [
     {
@@ -24,7 +22,7 @@ const appRoutes: Routes = [
     {
 		path: 'admin', 
         loadChildren: 'app/admin/admin.module#AdminModule',
-        //canActivate: [AdminGuard]
+        canActivate: [AdminGuard]
     },
     { path: '',   redirectTo: 'dashboard', pathMatch: 'full' },
     { path: '**', redirectTo: 'dashboard', pathMatch: 'full' }

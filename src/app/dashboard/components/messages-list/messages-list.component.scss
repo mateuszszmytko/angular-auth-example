@@ -1,0 +1,13 @@
+@import '../../../../styles/variables';
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+p {
+	span {
+		color: $main_clr;
+		font-weight: 700;
+	}
+}

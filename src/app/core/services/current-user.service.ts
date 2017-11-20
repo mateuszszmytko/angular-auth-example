@@ -24,7 +24,8 @@ export class CurrentUserService {
 
 	constructor(private _tokenStorageService: TokenStorageService,
 				private _auth: AuthenticationService,
-				private _http: HttpClient) {
+				private _http: HttpClient,
+				@Inject('API_URL') private _apiUrl) {
 
 		if(this._auth.isAuthenticated) {
 			this.decodeUser();
@@ -45,7 +46,7 @@ export class CurrentUserService {
 	public async registerAsync(model: RegisterData): Promise<boolean> {
 		//await this._auth.createAndAuthorize(model);
 		const tokenResult: any = await this._http.post
-			('http://localhost:52217/api/auth/register', JSON.stringify(model))
+			(this._apiUrl+'/api/auth/register', JSON.stringify(model))
 			.toPromise(); 
 
 		this._tokenStorageService.token = tokenResult.token;
